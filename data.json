@@ -1,0 +1,68 @@
+{
+  "personal-data": {
+    "name": "Richard Wilson",
+    "job": "Marketing Manager",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor."
+  },
+  "contact": {
+    "phone": "123-456-7890",
+    "email": "hello@reallygreatsite.com",
+    "address": "123 Anywhere St, Any City"
+  },
+  "certificate": [
+    {
+      "school": "Borcelle University",
+      "degree": "Bachelor of Business Management",
+      "years": "2020 - 2023"
+    },
+    {
+      "school": "Other University",
+      "degree": "Master of Science in Business",
+      "years": "2024 - Present"
+    }
+  ],
+  "skills": [
+    "Management",
+    "Negotiation",
+    "Critical Thinking",
+    "Leadership",
+    "Digital Marketing"
+  ],
+  "language": ["English", "Spanish"],
+  "education": [
+    {
+      "school-name": "Borcelle University",
+      "field": "Bachelor of Business Management",
+      "years": "2020 - 2023",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor."
+    },
+    {
+      "school-name": "Borcelle University",
+      "field": "Bachelor of Business Management",
+      "years": "2020 - 2023",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor."
+    }
+  ],
+  "work-experience": [
+    {
+      "work-field": "Product Design Manager",
+      "company-name": "Arrowavi Industries",
+      "years": "2020 - 2023",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor."
+    }
+  ],
+  "reference": [
+    {
+      "name": "Harumi Kobayashi",
+      "company-name": "Wardiere Inc. / CEO",
+      "phone": "123-456-7890",
+      "email": "harumi.k@example.com"
+    },
+    {
+      "name": "Bailey Dupont",
+      "company-name": "Wardiere Inc. / CEO",
+      "phone": "987-654-3210",
+      "email": "bailey.d@example.com"
+    }
+  ]
+}

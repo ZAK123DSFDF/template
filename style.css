@@ -1,0 +1,227 @@
+/* General Reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  width: 60%;
+  margin: 2rem auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #2b3543;
+  color: #fff;
+  border-radius: 0.5rem 0 0 0.5rem;
+  width: 30%;
+  padding: 20px;
+  text-align: left;
+}
+.contact p {
+  word-break: break-all;
+}
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  padding: 10px 0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.sidebar p,
+.sidebar ul,
+.sidebar li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar > div:not(.profile) {
+  margin-bottom: 2rem;
+}
+.certificate p {
+  font-size: 0.9rem;
+}
+
+.certificate p strong {
+  font-weight: bold;
+}
+.sidebar > div:last-child {
+  margin-bottom: 0;
+}
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Main Content Styling */
+.main-content {
+  width: 70%;
+  padding: 20px;
+  background-color: #fff9f3;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Header Fixes */
+.main-content .header h1 {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.main-content .header h2 {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.main-content .header p {
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+
+/* Titles (Education, Work Experience, References) */
+.main-content h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #000;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+
+/* Education Section */
+.education {
+  margin-bottom: 3rem;
+}
+.education-item {
+  margin-bottom: 1rem;
+}
+
+.education-item p:first-of-type {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: bold;
+}
+.education .year {
+  float: right;
+  font-size: 1rem;
+  color: #666;
+}
+.education-item p:nth-of-type(2) {
+  font-size: 1rem;
+  color: #666;
+}
+
+.education-item p:nth-of-type(3) {
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+
+/* Work Experience Section */
+.work-experience {
+  margin-bottom: 3rem;
+}
+.work-experience .year {
+  float: right;
+  font-size: 1rem;
+  color: #666;
+}
+.work-item {
+  margin-bottom: 1rem;
+}
+
+.work-item p:first-of-type {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.work-item p:nth-of-type(2) {
+  font-size: 1rem;
+  color: #666;
+}
+
+.work-item p:nth-of-type(3) {
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+.references {
+  margin-bottom: 3rem; /* Space between sections */
+}
+
+.references h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #000;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+
+.reference-item {
+  margin-bottom: 1rem;
+}
+
+.reference-item p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+.reference-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  row-gap: 0.2rem;
+}
+.reference-item .company {
+  color: #666;
+}
+
+.reference-item p:first-of-type {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: bold;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="profile">
+          <img src="boy.jpg" alt="Profile Picture" />
+        </div>
+        <div class="contact">
+          <h3>CONTACT</h3>
+        </div>
+        <div class="certificate">
+          <h3>CERTIFICATE</h3>
+        </div>
+        <div class="skills">
+          <h3>SKILLS</h3>
+          <ul></ul>
+        </div>
+        <div class="language">
+          <h3>LANGUAGE</h3>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="header"></div>
+        <div class="education">
+          <h3>Education</h3>
+        </div>
+        <div class="work-experience">
+          <h3>Work Experience</h3>
+        </div>
+        <div class="references">
+          <h3>References</h3>
+          <div class="reference-container"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      fetch("data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const contactContainer = document.querySelector(".contact");
+
+          // Append phone
+          const phoneElement = document.createElement("p");
+          phoneElement.textContent = `📞 ${data.contact.phone}`;
+          contactContainer.appendChild(phoneElement);
+
+          // Append email
+          const emailElement = document.createElement("p");
+          emailElement.textContent = `📧 ${data.contact.email}`;
+          contactContainer.appendChild(emailElement);
+
+          // Append address
+          const addressElement = document.createElement("p");
+          addressElement.textContent = `🏠 ${data.contact.address}`;
+          contactContainer.appendChild(addressElement);
+          const certificateContainer = document.querySelector(".certificate");
+          data.certificate.forEach((cert) => {
+            const certificateHTML = `
+                       <p>
+                        <strong>${cert.school}</strong><br />
+                               ${cert.degree}<br />
+                              ${cert.years}
+                       </p>
+                        `;
+            certificateContainer.innerHTML += certificateHTML;
+          });
+          const skillsList = document.querySelector(".skills ul");
+          data.skills.forEach((skill) => {
+            const skillItem = document.createElement("li");
+            skillItem.textContent = skill;
+            skillsList.appendChild(skillItem);
+          });
+
+          // Select the language container
+          const languageContainer = document.querySelector(".language");
+
+          // Loop through the language array and append each language
+          data.language.forEach((lang) => {
+            const languageElement = document.createElement("p");
+            languageElement.textContent = lang;
+            languageContainer.appendChild(languageElement);
+          });
+
+          // Select the header container
+          const headerContainer = document.querySelector(".header");
+
+          // Create and append the name
+          const nameElement = document.createElement("h1");
+          nameElement.textContent = data["personal-data"].name;
+          headerContainer.appendChild(nameElement);
+
+          // Create and append the job title
+          const jobElement = document.createElement("h2");
+          jobElement.textContent = data["personal-data"].job;
+          headerContainer.appendChild(jobElement);
+
+          // Create and append the description
+          const descriptionElement = document.createElement("p");
+          descriptionElement.textContent = data["personal-data"].description;
+          headerContainer.appendChild(descriptionElement);
+
+          // Select the education container
+          const educationContainer = document.querySelector(".education");
+
+          // Loop through the education array
+          data.education.forEach((edu) => {
+            // Create the education item container
+            const educationItem = document.createElement("div");
+            educationItem.classList.add("education-item");
+
+            // Create the school name with years
+            const schoolNameElement = document.createElement("p");
+            const schoolNameStrong = document.createElement("strong");
+            schoolNameStrong.textContent = edu["school-name"];
+            schoolNameElement.appendChild(schoolNameStrong);
+
+            // Add years as a span
+            const yearElement = document.createElement("span");
+            yearElement.classList.add("year");
+            yearElement.textContent = edu.years;
+            schoolNameElement.appendChild(yearElement);
+
+            educationItem.appendChild(schoolNameElement);
+
+            // Create the field of study
+            const fieldElement = document.createElement("p");
+            fieldElement.innerHTML = `<strong>${edu.field}</strong>`;
+            educationItem.appendChild(fieldElement);
+
+            // Create the description
+            const descriptionElement = document.createElement("p");
+            descriptionElement.textContent = edu.description;
+            educationItem.appendChild(descriptionElement);
+
+            // Append the education item to the container
+            educationContainer.appendChild(educationItem);
+          });
+
+          // Select the work experience container
+          const workContainer = document.querySelector(".work-experience");
+
+          // Loop through the work experience array
+          data["work-experience"].forEach((work) => {
+            // Create the work item container
+            const workItem = document.createElement("div");
+            workItem.classList.add("work-item");
+
+            // Create the work field with years
+            const workFieldElement = document.createElement("p");
+            const workFieldStrong = document.createElement("strong");
+            workFieldStrong.textContent = work["work-field"];
+            workFieldElement.appendChild(workFieldStrong);
+
+            // Add years as a span
+            const yearElement = document.createElement("span");
+            yearElement.classList.add("year");
+            yearElement.textContent = work.years;
+            workFieldElement.appendChild(yearElement);
+
+            workItem.appendChild(workFieldElement);
+
+            // Create the company name
+            const companyElement = document.createElement("p");
+            companyElement.innerHTML = `<strong>${work["company-name"]}</strong>`;
+            workItem.appendChild(companyElement);
+
+            // Create the description
+            const descriptionElement = document.createElement("p");
+            descriptionElement.textContent = work.description;
+            workItem.appendChild(descriptionElement);
+
+            // Append the work item to the container
+            workContainer.appendChild(workItem);
+          });
+
+          // Select the reference container
+          const referenceContainer = document.querySelector(
+            ".reference-container"
+          );
+
+          // Loop through the reference array
+          data.reference.forEach((ref) => {
+            // Create the reference item container
+            const referenceItem = document.createElement("div");
+            referenceItem.classList.add("reference-item");
+
+            // Add the name
+            const nameElement = document.createElement("p");
+            nameElement.innerHTML = `<strong>${ref.name}</strong>`;
+            referenceItem.appendChild(nameElement);
+
+            // Add the company name
+            const companyElement = document.createElement("p");
+            companyElement.classList.add("company");
+            companyElement.textContent = ref["company-name"];
+            referenceItem.appendChild(companyElement);
+
+            // Add the phone number
+            const phoneElement = document.createElement("p");
+            phoneElement.textContent = `📞 ${ref.phone}`;
+            referenceItem.appendChild(phoneElement);
+
+            // Add the email
+            const emailElement = document.createElement("p");
+            emailElement.textContent = `📧 ${ref.email}`;
+            referenceItem.appendChild(emailElement);
+
+            // Append the reference item to the container
+            referenceContainer.appendChild(referenceItem);
+          });
+        });
+    </script>
+  </body>
+</html>
